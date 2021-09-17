@@ -1,0 +1,16 @@
+version: '3.5'
+services:
+
+  eureka:
+    container_name: eureka
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - '8761:8761'
+    networks:
+      - net-driver
+
+networks:
+  net-driver:
+    driver: bridge
